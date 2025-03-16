@@ -76,6 +76,10 @@ def main():
             "pins": wiring
         }
         print(json.dumps(output, indent=4))
+        
+        with open("output.json", "w") as text_file:
+                print(json.dumps(output, indent=4), file=text_file)
+        
     finally:
         GPIO.cleanup()
 
